@@ -3,7 +3,7 @@ include 'fragmentos/header.php';
 
 if(isset($_POST['salvar'])){
 
-    echo "oiiiiiiiiiiiiiiiii";
+
 
     $titulo = $_POST['titulo'];
     $preco = $_POST['preco'];
@@ -15,7 +15,6 @@ if(isset($_POST['salvar'])){
     $imagem;
     $status = 1;
 
-    print_r($_FILES['foto_perfil']);
 
     if (isset($_FILES['foto_perfil']) && $_FILES['foto_perfil']['error'] === UPLOAD_ERR_OK) {
         $uploadDirectory = 'upload/';
@@ -26,7 +25,7 @@ if(isset($_POST['salvar'])){
     
         $diretorio = $uploadDirectory . time() . '.' . $extensao;
 
-        print_r($imagem_nome);
+
     
         if (move_uploaded_file($_FILES['foto_perfil']['tmp_name'], $diretorio)) {
     
