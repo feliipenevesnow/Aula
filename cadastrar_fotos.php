@@ -1,9 +1,10 @@
 <?php
 include 'fragmentos/header.php';
+include '_funcoesConfigBanco.php';
 
 if(isset($_POST['salvar'])){
 
-
+    $con = conectarBanco();
 
     $titulo = $_POST['titulo'];
     $preco = $_POST['preco'];

@@ -1,9 +1,41 @@
 <?php
 include 'fragmentos/header.php';
+include '_funcoesConfigBanco.php';
+
+$con = conectarBanco();
+
+$sql = "select * from foto";
+
+$fotos = executarSelect($con, $sql);
+
 ?>
+
+
+
 
 <main>
 
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <?php
+                foreach($fotos as $foto){
+            ?>
+
+            <div class="card col-md-4 col-6 mt-5">
+                <div class="card-body">
+                    <h2 class="card-tittle"></h2>
+                    <img style="width: 250px; height: 250px" src="upload/<?= $foto['imagem'] ?>" alt="">
+                </div>
+            </div>
+
+            <?php
+                }
+            ?>
+
+
+        </div>
+    </div>
 
 </main>
 
