@@ -17,6 +17,7 @@ if( count($usuarios) == 1 ){
     session_start();
 
     $_SESSION['usuario'] = $usuario;
+    $_SESSION['carrinho'] = array();
 
     header("Location: fotos.php");
 }else{

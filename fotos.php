@@ -32,7 +32,6 @@ $fotos = executarSelect($con, $sql);
                         <img style="width: 250px; height: 250px" src="upload/<?= $foto['imagem'] ?>" alt="">
                     </div>
                     <a href="_curtir.php?foto=<?= $foto['codigo'] ?>">
-
                         <?php
                         if (count($resultado) == 0) { ?>
                             <i class="fa-regular fa-heart" style="font-size: 30px; color: red"></i>
@@ -40,9 +39,13 @@ $fotos = executarSelect($con, $sql);
                             <i class="fa-solid fa-heart" style="font-size: 30px; color: red"></i>
                         <?php }
                         ?>
-
-
                     </a>
+                    <form action="_carrinho.php?foto=<?= $foto['codigo'] ?>" method="post" class="p-4">
+                        <div class="row">
+                            <input type="number" min="0" name="quantidade" class="form-control">
+                            <button class="btn btn-dark">ADC C.</button>
+                        </div>
+                    </form>
                 </div>
 
                 <?php
